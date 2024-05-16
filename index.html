@@ -19,11 +19,25 @@
       </div>
 
       <div class="to-do-list">
-        <h1 class="title">To Do List</h1>
-        <input class="input-task" type="text" placeholder="Digite sua tarefa" />
-        <button class="button-add-task">Adicionar</button>
+        <form id="form">
+          <h1 class="title">To Do List</h1>
+          <div class="input-box">
+            <label for="input-task">Digite sua tarefa</label>
+
+            <div class="input-container">
+              <div class="input-field">
+                <input class="input-task" type="text" />
+              </div>
+
+              <div class="button-box">
+                <button class="button-add-task">Adicionar</button>
+              </div>
+            </div>
+          </div>
+
+          <ul class="list-task"></ul>
+        </form>
       </div>
-      <ul class="list-task"></ul>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
