@@ -10,8 +10,8 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
-  background: #18181b;
+  height: 100vh;
+  background: #3d3d41;
 }
 
 .container {
@@ -35,6 +35,7 @@ body {
 }
 
 .form {
+  width: 405px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -80,7 +81,7 @@ body {
   outline: none;
   color: #f8fafc;
   font-size: 1rem;
-  padding:0.5rem;
+  padding: 0.5rem;
   gap: 1rem;
 }
 
@@ -94,4 +95,170 @@ body {
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+}
+
+.filters span {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.4s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.filters span:hover,
+.filters span.active {
+  color: #16a34a;
+  border-bottom: 3px solid #16a34a;
+  transition: all 0.4s ease;
+}
+
+.task-box {
+  margin-top: 20px;
+  margin-right: 5px;
+  padding: 0 20px 10px 25px;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/*criar uma caixa de 300px de altura e mostra uma barra de rolagem caso o conteúdo ultrapasse.*/
+.task-box.overflow {
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.task-box::-webkit-scrollbar {
+  width: 5px;
+}
+
+.task-box::-webkit-scrollbar-track {
+  background: #262626;
+  border-radius: 25px;
+}
+
+.task-box::-webkit-scrollbar-thumb {
+  background: #e6e6e6;
+  border-radius: 25px;
+}
+
+.task-box .task {
+  list-style: none;
+  font-size: 17px;
+  margin-bottom: 18px;
+  padding-bottom: 1rem;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+}
+
+.task-box .task:last-child {
+  margin-bottom: 0;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.task-box .task label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.task-box label input {
+  margin-top: 7px;
+  accent-color: #16a34a;
+  cursor: pointer;
+}
+
+.task label p {
+  user-select: none;
+  margin-left: 12px;
+  font-weight: 400;
+  font-size: 17px;
+  word-wrap: break-word;
+}
+
+.task label p.checked {
+  text-decoration: line-through;
+}
+
+.task-box .settings {
+  position: relative;
+  cursor: pointer;
+}
+
+.settings:where(i, li) {
+  cursor: pointer;
+}
+
+.settings .task-menu {
+  z-index: 10;
+  right: -5px;
+  bottom: -65px;
+  padding: 5px 0;
+  background: #262626;
+  position: absolute;
+  border-radius: 4px;
+  transform: scale(0);
+  transform-origin: top right;
+  transition: transform 0.2s ease;
+}
+
+.task-box .task:last-child .task-menu {
+  bottom: 0;
+  transform-origin: bottom right;
+}
+
+.task-box .task:first-child .task-menu {
+  bottom: -65px;
+  transform-origin: top right;
+}
+
+.task-menu.show {
+  transform: scale(1);
+}
+
+.task-menu li {
+  height: 25px;
+  font-size: 16px;
+  margin-bottom: 2px;
+  padding: 17px 15px;
+  cursor: pointer;
+  justify-content: flex-start;
+}
+
+.task-menu li:last-child {
+  margin-bottom: 0;
+}
+
+.task-menu li:hover {
+  background: #a5a3a3;
+}
+
+.task-menu li i {
+  padding-right: 8px;
+}
+
+@media screen and (max-width: 1024px) {
+  .img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    margin: 10px;
+  }
+  .to-do-list {
+    width: 100%;
+    justify-content: center;
+  }
 }
