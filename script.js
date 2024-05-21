@@ -6,7 +6,7 @@ $(document).ready(function () {
 
   let editId;
   let isEditTask = false;
-  let todos = JSON.parse(localStorage.getItem("todo-list"));
+  let todos = JSON.parse(localStorage.getItem("todo-list") || []);
 
   filters.on("click", function () {
     $(".filters span.active").removeClass("active");
