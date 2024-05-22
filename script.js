@@ -71,7 +71,7 @@ $(document).ready(function () {
   showTodo("all");
 
   function checkOverflow() {
-    if (taskBox.height() > 300) {
+    if (taskBox.height() >= 300) {
       taskBox.addClass("overflow");
     } else {
       taskBox.removeClass("overflow");
