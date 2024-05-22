@@ -6,7 +6,14 @@ $(document).ready(function () {
 
   let editId;
   let isEditTask = false;
-  let todos = JSON.parse(localStorage.getItem("todo-list") || []);
+  let todos;
+
+  try {
+    todos = JSON.parse(localStorage.getItem("todo-list")) || [];
+  } catch (e) {
+    todos = [];
+    console.error("Failed to parse todo list from localStorage", e);
+  }
 
   filters.on("click", function () {
     $(".filters span.active").removeClass("active");
