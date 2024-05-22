@@ -32,13 +32,14 @@ body {
   color: #f8fafc;
   background-color: #262626;
   border-radius: 0.5rem;
+  width: 405px;
 }
 
-.form {
-  width: 405px;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+@media screen and (max-width: 500px) {
+  .to-do-list {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .title {
@@ -73,6 +74,7 @@ body {
 .input-field {
   background-color: #3f3f46;
   border-radius: 8px;
+  flex: 1;
 }
 
 .input-field input {
@@ -82,7 +84,6 @@ body {
   color: #f8fafc;
   font-size: 1rem;
   padding: 0.5rem;
-  gap: 1rem;
 }
 
 .button-add-task {
@@ -95,6 +96,12 @@ body {
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .filters {
@@ -124,17 +131,8 @@ body {
   margin-top: 20px;
   margin-right: 5px;
   padding: 0 20px 10px 25px;
-}
-
-li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-/*criar uma caixa de 300px de altura e mostra uma barra de rolagem caso o conteúdo ultrapasse.*/
-.task-box.overflow {
-  overflow-y: auto;
   max-height: 300px;
+  overflow-y: auto;
 }
 
 .task-box::-webkit-scrollbar {

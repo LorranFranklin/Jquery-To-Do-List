@@ -66,17 +66,8 @@ $(document).ready(function () {
       });
     }
     taskBox.html(liTag || `<span>Você não tem tarefas</span>`);
-    checkOverflow();
   }
   showTodo("all");
-
-  function checkOverflow() {
-    if (taskBox.height() >= 300) {
-      taskBox.addClass("overflow");
-    } else {
-      taskBox.removeClass("overflow");
-    }
-  }
 
   function updateStatus(selectedTask) {
     let taskName = $(selectedTask).parent().find("p");
@@ -113,7 +104,6 @@ $(document).ready(function () {
     todos.splice(taskId, 1);
     localStorage.setItem("todo-list", JSON.stringify(todos));
     showTodo(filter);
-    checkOverflow();
   }
 
   addBtn.on("click", function () {
@@ -129,7 +119,6 @@ $(document).ready(function () {
       taskInput.val("");
       localStorage.setItem("todo-list", JSON.stringify(todos));
       showTodo($("span.active").attr("id"));
-      checkOverflow();
     }
   });
 });
