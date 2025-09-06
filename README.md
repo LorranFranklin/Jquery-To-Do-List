@@ -24,4 +24,4 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Este é o meu mais recente trabalho.
 
-- [Acesse o projeto finalizado, online](https://jquery-to-do-list-tawny.vercel.app/)
+- [Acesse o projeto finalizado, online](https://jquery-to-do-list-5omw.vercel.app/)
